@@ -1,0 +1,28 @@
+title: Aleksei Petrenko home page
+email: apetrenko1991@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to a personal page of Aleksei Petrenko. Use the website to find out
+  about my life, experience and projects. Let's get in touch!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+host: 0.0.0.0
+port: 4000
+github_username: alex-petrenko
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

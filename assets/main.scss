@@ -1,0 +1,164 @@
+---
+---
+
+@import "minima";
+
+
+$grey-link-color:       #999 !default;
+
+
+.site-nav {
+  float: left;
+
+  .page-link {
+    color: $grey-link-color;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: $grey-link-color;
+  }
+}
+
+.site-footer {
+  padding: $spacing-unit/3 0;
+  font-size: .8em;
+
+  ul {
+    margin-left: 0;
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $grey-link-color;
+  }
+}
+
+.title { font-size: 3em; }
+
+.fancy-border {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.photo {
+  @extend .fancy-border;
+  float: right;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  width: 285px;
+
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@include media-query($on-palm) {
+  .photo {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modest-link {
+  a {
+    text-decoration: none;
+    color: $text-color;
+  }
+  a:visited {
+    text-decoration: none;
+    color: $text-color;
+  }
+}
+
+.modest {
+  color: $grey-link-color;
+}
+
+.content-col {
+  text-align: justify;
+}
+
+@include media-query($on-palm) {
+  .content-col {
+    float: left;
+    width: 100%;
+  }
+}
+
+.media-element {
+  display: block;
+  overflow: auto;
+}
+
+.sf-div {
+  @extend .media-element;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.sketchfab-embed-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 10px;
+  overflow: auto;
+  width: 560px;
+}
+
+.sketchfab-embed-wrapper-left {
+  @extend .sketchfab-embed-wrapper;
+  width: 49%;
+  float: left;
+}
+.sketchfab-embed-wrapper-right {
+  @extend .sketchfab-embed-wrapper;
+  width: 49%;
+  float: right;
+}
+
+@include media-query($on-palm) {
+  .sketchfab-embed-wrapper, .sketchfab-embed-wrapper-left, .sketchfab-embed-wrapper-right {
+    width: 100%;
+  }
+}
+
+.sf-iframe {
+  @extend .fancy-border;
+  width: 100%;
+  height: 330px;
+}
+.sf-iframe-single {
+  @extend .sf-iframe;
+  height: 315px;
+}
+
+.youtube-iframe {
+  @extend .media-element;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.footer-note {
+  color: $grey-link-color;
+}
+
+.about-list {
+  li {
+    margin: 0 0 15px 0;
+  }
+}
