@@ -14,35 +14,81 @@ title: Aleksei Petrenko
     </i></p>
 
     <p>
-    Hi, I'm a computer scientist from Nizhny Novgorod, Russia.<br />I am currently working on 3D scanning and human digitization projects at the computer vision startup 
-    <a href="https://itseez3d.com">itSeez3D</a>.
+      I am a Ph.D. student in Robotics and Embedded Systems Lab at University of Southern California, advised by prof. Gaurav Sukhatme.
+      My research focus is deep reinforcement learning and machine learning for robotics.
+      <br /><br />
+      
+      Before my Ph.D. I spent 7 years in industry, working on
+      software design and architecture, applied machine learning, algorithms, 3D graphics, computer vision and even
+      virtual reality.
     </p>
 
+    <h2>Research interests</h2>
     <p>
-      My goal is to understand intelligence better and to incorporate this understanding into the design of the next generation of AI systems.
-    </p>
+      My main inspiration is a study of intelligent agents.<br />
+      I want my agents to learn efficiently, with minimal supervision, and to be curious about the world surrounding them.
+      I want to find out which inductive biases we can use to make our agents smarter.<br />
 
-    <h1>Research interests</h1>
-    <p>
-      I am interested in a broad range of machine learning and AI topics.
-      So far, I've been focusing on deep learning, computer vision and software development in general, but my main inspiration is a study of intelligent agents.
-      I'm particularly curious about the following fields of contemporary AI research:
+      Right now I am actively working on:
       <ul>
-        <li>Hierarchical RL: task decomposition, AI systems that use multiple spatial and temporal resolutions</li>
-        <li>Self-motivated exploration, curiosity</li>
-        <li>Long-term planning with sparse reward</li>
-        <li>Emergence of communication between the AI agents</li>
-        <li>Using simulations to train AI</li>
+        <li>Topological "landmark"-based environment maps for autonomous exploration in environments with sparse rewards</li>
+        <li>Building predictive models for efficient decision making in stochastic environments
+          (aka <a href="https://arxiv.org/abs/1707.06203">Imagination-Augmented Agents</a> for stochastic environments)</li>
       </ul>
     </p>
 
-    <h1>Selected projects</h1>
-    <h2>itSeez3D: Avatar SDK (2016-2018)</h2>
-    <p>I had a privilege to work on some exciting projects with my latest employers,
-    <a href="https://techcrunch.com/2016/05/26/intel-buys-computer-vision-startup-itseez-to-improve-navigation-in-self-driving-cars/">itSeez</a>
-    and <a href="https://itseez3d.com/">itSeez3D</a>.<br />
-    <a href="https://avatarsdk.com">AvatarSDK</a> is definitely one of them.
-    Very cool 3D human digitization with deep learning!
+    <h2>Recent projects:</h2>
+
+    <h3>Curiosity-driven Exploration in RL (2018)</h3>
+    <i><a href="https://github.com/alex-petrenko/curious-rl">github.com/alex-petrenko/curious-rl</a></i><br />
+    Tensorflow implementation of the method
+    <a href="https://pathak22.github.io/noreward-rl/resources/icml17.pdf">"Curiosity-driven Exploration by Self-supervised Prediction"</a>
+    by Pathak et al. for hard exploration tasks in 3D pixel-based environment.
+
+    <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+      <img class="images" src="/assets/doom_maze.gif" alt="VizDoom maze" />
+      <img class="images" src="/assets/doom_very_sparse.gif" alt="VizDoom maze sparse" />
+    </div>
+    
+    <br />
+    <h3>RL agents for a game "MicroTbs" (2017)</h3>
+    <i><a href="https://github.com/alex-petrenko/rl-experiments">github.com/alex-petrenko/rl-experiments</a></i><br />
+    An OpenAI Gym-compatible 2D environment and some RL algorithms trained in it: Double DQN, A2C, etc.
+    Inspired by an old game <a href="/assets/homm3.jpg">Heroes of Might and Magic III</a>, which is quite challenging for contemporary AI.
+    I designed this environment to resemble some of the features of the original game: scouting, different terrain, picking up resources, etc.
+    A sample video (more in the repository):
+    <iframe
+      class="fancy-border youtube-iframe"
+      width="560" height="315"
+      src="https://www.youtube.com/embed/CP94lSM0zGM" frameborder="0" allowfullscreen>
+    </iframe>
+
+    <br />
+    <h3>Capturing volumetric video (2017)</h3>
+    <p>
+    <i><a href="https://github.com/alex-petrenko/4dvideo">github.com/alex-petrenko/4dvideo</a></i><br />
+    "4D video" grabber and player for Intel RealSense and Google Tango.
+    The player is based on modified Guibas-Stolfi triangulation algorithm and can generate 3D mesh in realtime (300fps on PC, 100fps on Android).
+    With this software I captured <a href="https://skfb.ly/6s77X">a lot</a> of cool 4D clips:
+    </p>
+    <div class="sf-div">
+    <div class="sketchfab-embed-wrapper"><iframe class="sf-iframe-single" src="https://sketchfab.com/models/fa1652c6619b4d39a4b754f225123518/embed?preload=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+        <a href="https://sketchfab.com/models/fa1652c6619b4d39a4b754f225123518?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">4D video (R200 #01, with texture)</a>
+        by <a href="https://sketchfab.com/apetrenko1991?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">apetrenko1991</a>
+        on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>
+    </div>
+    </div>
+
+    <p>I also made some algorithm <a href="https://www.youtube.com/playlist?list=PLpDtE3hf0mXg1FOivZkrsHTdirfHuLPW1">visualizations</a> for fun, check 'em out!
+
+    <br /><br />
+    <h2>Industry and applied research:</h2>
+    <h3>itSeez3D: Avatar SDK (2016-2018)</h3>
+    <p>At <a href="https://itseez3d.com/">itSeez3D</a> I worked on a very interesting project called
+    <a href="https://avatarsdk.com">AvatarSDK</a>.
+    AvatarSDK is a deep-learning based pipeline for human digitization.
     Check out some of my digital copies automatically generated by our system (<a href=/bonus_avatars>and a bonus</a>):</p>
     <div class="sf-div">
     <div class="sketchfab-embed-wrapper-left"><iframe class="sf-iframe" src="https://sketchfab.com/models/2714d2764b5f427ba70ed2946a10cc60/embed?preload=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
@@ -60,8 +106,9 @@ title: Aleksei Petrenko
     </p>
     </div>
     </div>
-    <h2>itSeez3D: Mobile 3D scanner (2013-2017)</h2>
-    <p>With itSeez, and later itSeez3D I participated in the development of the <a href="https://itseez3d.com">3D scanning software</a> for various structured light sensors. Our results are close to those of professional 3D scanners, for 10x less money!
+    <h3>itSeez3D: Mobile 3D scanner (2013-2017)</h3>
+    <p>With itSeez, and later itSeez3D I participated in the development of the <a href="https://itseez3d.com">3D scanning software</a> for various structured light sensors.
+    Our results are close to those of professional 3D scanners, for 10-100x less money!
     Hey, this page needs more Sketchfab embeds:</p>
 
     <div class="sf-div">
@@ -74,42 +121,20 @@ title: Aleksei Petrenko
     </div>
     </div>
 
-    <h2>Personal project: Deep RL in a gridworld called "MicroTbs" (2017)</h2>
-    <i>A work in progress: <a href="https://github.com/alex-petrenko/rl-experiments">github.com/alex-petrenko/rl-experiments</a></i><br />
-    An OpenAI gym-compatible 2D environment and some RL algorithms trained in it: Double DQN, A2C.
-    Inspired by an old game <a href="/assets/homm3.jpg">Heroes of Might and Magic III</a>.
-    The game itself is quite challenging for contemporary AI.
-    I designed this tiny environment to resemble some of the features of the original game: scouting, different terrain, picking up resources, collecting an army.
-    A sample video (more in the repository):
-    <iframe
-      class="fancy-border youtube-iframe"
-      width="560" height="315"
-      src="https://www.youtube.com/embed/CP94lSM0zGM" frameborder="0" allowfullscreen>
-    </iframe>
-
-    <h2>Personal project: "4D" video (2016)</h2>
-    <p>
-    <i><a href="https://github.com/alex-petrenko/4dvideo">github.com/alex-petrenko/4dvideo</a></i><br />
-    Using my 3D-scanning-expertise I programmed a "4D" grabber and player for Intel RealSense and Google Tango.
-    The player is based on modified Guibas-Stolfi triangulation algorithm and can generate 3D mesh in realtime (300fps on PC, 100fps on Android).
-    With this software I captured <a href="https://skfb.ly/6s77X">a lot</a> of cool 4D clips:
-    <div class="sf-div">
-    <div class="sketchfab-embed-wrapper"><iframe class="sf-iframe-single" src="https://sketchfab.com/models/fa1652c6619b4d39a4b754f225123518/embed?preload=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
-    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-        <a href="https://sketchfab.com/models/fa1652c6619b4d39a4b754f225123518?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">4D video (R200 #01, with texture)</a>
-        by <a href="https://sketchfab.com/apetrenko1991?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">apetrenko1991</a>
-        on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-    </p>
-    </div>
-    </div>
-
-    <p>I also made some algorithm <a href="https://www.youtube.com/playlist?list=PLpDtE3hf0mXg1FOivZkrsHTdirfHuLPW1">visualizations</a> for fun, and wrote a big <a href="https://habrahabr.ru/post/333532/">article</a> about this project.
-    Check it out if you're fluent in Russian! :)</p>
-
-    <h2>Other projects</h2>
+    <h2>Other projects & repositories</h2>
     <ul>
       <li>
-        <i><a href="https://github.com/alex-petrenko/udacity-deep-learning/blob/master/hyperopt.py">github.com/alex-petrenko/udacity-deep-learning/blob/master/hyperopt.py</a></i><br />
+        <i><a href="https://github.com/alex-petrenko/tf-reinforce">github.com/alex-petrenko/tf-reinforce</a></i><br />
+        Tensorflow implementation of classic
+        policy gradient algorithm for continuous control tasks
+      </li>
+      <li>
+          <i><a href="https://github.com/alex-petrenko/snake-rl">github.com/alex-petrenko/snake-rl</a></i><br />
+          RL algorithms for classic Snake game
+          (<a href="https://youtu.be/bh_5aIqVTUY">youtube</a>)
+        </li>
+      <li>
+        <i><a href="https://github.com/alex-petrenko/udacity-deep-learning/blob/master/hyperopt.py">hyperopt.py</a></i><br />
         Evolutionary algorithm for hyperparameter optimization in deep learning (it works!)
       </li>
       <li>

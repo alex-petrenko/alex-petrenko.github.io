@@ -43,7 +43,7 @@ $grey-link-color:       #999 !default;
   }
 }
 
-.title { font-size: 3em; }
+.title { font-size: 2.5em; }
 
 .fancy-border {
   background-color: white;
@@ -55,7 +55,7 @@ $grey-link-color:       #999 !default;
   float: right;
   margin-left: 25px;
   margin-bottom: 15px;
-  width: 280px;
+  width: 240px;
 
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -68,6 +68,13 @@ $grey-link-color:       #999 !default;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.images {
+  @extend .fancy-border;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .modest-link {
@@ -150,7 +157,7 @@ $grey-link-color:       #999 !default;
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .footer-note {
