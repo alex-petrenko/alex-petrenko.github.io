@@ -1,8 +1,7 @@
 title: Aleksei Petrenko home page
 email: apetrenko1991@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to a personal page of Aleksei Petrenko. Use the website to find out
-  about my life, experience and projects. Let's get in touch!
+  Welcome to my personal webpage. Use this website to find out about my experience and projects. Let's get in touch!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 host: 0.0.0.0
