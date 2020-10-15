@@ -5,7 +5,7 @@ title: Aleksei Petrenko
 <div>
   <h1 class="title">Hi there, I'm Aleksei Petrenko</h1>
 
-  <img class="photo" src="/assets/tahoe_2019.jpg" alt="Aleksei photo" />
+  <img class="photo" src="/assets/montana_2020.jpg" alt="Aleksei photo" />
 
   <div class="content-col">
     <p class="modest-link"><i>
@@ -14,29 +14,58 @@ title: Aleksei Petrenko
     </i></p>
 
     <p>
-      I am a Ph.D. student in Robotics and Embedded Systems Lab at University of Southern California, advised by prof. Gaurav Sukhatme.
+      I am a PhD student in Robotics and Embedded Systems Lab at University of Southern California, advised by
+      <a href="https://viterbi.usc.edu/directory/faculty/Sukhatme/Gaurav">prof. Gaurav Sukhatme</a>.
       My research focus is deep reinforcement learning and machine learning for robotics.
       <br /><br />
       
-      Before my Ph.D. I spent 8 years in industry, working on
-      software design and architecture, machine learning, algorithms, 3D graphics, computer vision and even
-      virtual reality.
+      Before my PhD I spent 8 years in industry, working on
+      software design and architecture, machine learning, algorithms, 3D graphics, computer vision, and virtual reality.
     </p>
 
     <h2>Research interests</h2>
     <p>
-      My main inspiration is a study of intelligent agents.<br />
-      I want my agents to learn efficiently, with minimal supervision, and to be curious about the world surrounding them.
-      I want to find out which inductive biases we can use to make our agents smarter.<br />
+      I am interested in embodied intelligence, agents that learn how to act autonomously and perceive the world through
+      egocentric observations. I study computationally efficient methods of training these agents in simulation,
+      as well as problems of sim-to-real transfer. <br />
 
       Right now I am actively working on:
       <ul>
-        <li>Distributed RL & self-play for training human-level agents for a pixel-based 3D game (VizDoom)</li>
-        <li>Autonomous exploration based on topological landmark-based environment maps</li>
+        <li>Highly optimized open-source software for deep reinforcement learning, such as RL algorithms and simulators.</li>
+        <li>Advanced training scenarios such as population-based training and self-play.</li>
+        <li>Reinforcement learning for quadrotor swarms.</li>
       </ul>
+
+      In the past I also worked on exploration in RL, memory in embodied agents, and stochastic future prediciton.
     </p>
 
-    <h2>Recent projects:</h2>
+    <h2>Recent publications:</h2>
+
+    <p><small>
+      <b><i>(2020) Sample Factory: Egocentric 3D Control from Pixels at 100000 FPS with Asynchronous Reinforcement Learning</i></b><br />
+      <i><u>Aleksei Petrenko</u>, Zhehui Huang, Tushar Kumar, Gaurav Sukhatme, Vladlen Koltun</i><br />
+      <i>International Conference on Machine Learning (ICML), 2020</i><br />
+      <a href="https://arxiv.org/abs/2006.11751">[Paper]</a>
+      <a href="https://github.com/alex-petrenko/sample-factory">[Code]</a>
+      <a href="https://sites.google.com/view/sample-factory/home">[Website]</a>
+      <a href="https://youtu.be/lLG17LKKSZc">[Talk]</a><br />
+
+      <a href="https://venturebeat.com/2020/06/24/intels-sample-factory-speeds-up-reinforcement-learning-training-on-a-single-pc/">[Press #1]</a>
+      <a href="https://analyticsindiamag.com/intels-new-ai-system-can-optimise-reinforcement-learning-training-on-a-single-system/">[Press #2]</a>
+      <a href="https://news.ycombinator.com/item?id=23875367">[Press #3]</a>
+      <a href="https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/powerful-ai-can-now-be-trained-on-a-single-computer">[Press #4]</a>
+    </small></p>
+
+
+    Reinforcement learning framework with the highest single-machine training throughput at the time of publication, ~10x faster
+    than traditional synchronous RL implementations. SOTA results in challenging VizDoom environments.
+
+    <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+      <img class="images" src="/assets/sf_battle.gif" alt="VizDoom maze sparse" />
+      <img class="images" src="/assets/sf_duel.gif" alt="VizDoom maze" />
+    </div>
+
+    <h2>Research projects:</h2>
 
     <h3>Curiosity-driven Exploration in RL (2018)</h3>
     <i><a href="https://github.com/alex-petrenko/curious-rl">github.com/alex-petrenko/curious-rl</a></i><br />
