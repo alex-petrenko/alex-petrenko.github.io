@@ -25,14 +25,18 @@ title: Aleksei Petrenko
 
     <h2>Research interests</h2>
     <p>
-      I am interested in embodied intelligence, agents that learn how to act autonomously and perceive the world through
-      egocentric observations. I study computationally efficient methods of training these agents in simulation,
-      as well as problems of sim-to-real transfer. <br />
-
+      I am interested in the study of intelligent agents. I believe that one of the ways towards general intelligence is through creating increasingly complex
+      virtual worlds and training/evolving agents in these worlds that can manipulate their environment to reach goals.
+    </p>
+    <p>
+      Throuhgout my academic journey I paid a lot of attention to performance aspects of simulation and learning: I think that access to large 
+      amounts of diverse data and the ability to quickly iterate on ideas is key to accelerating research.
+    </p>
+    <p>
       Right now I am actively working on:
       <ul>
         <li>Highly optimized open-source software for deep reinforcement learning, such as RL algorithms and simulators.</li>
-        <li>Advanced training scenarios such as population-based training and self-play.</li>
+        <li>RL & population-based training in the context of dexterous robotic manipulation.</li>
         <li>Reinforcement learning for quadrotor swarms.</li>
       </ul>
 
@@ -40,11 +44,60 @@ title: Aleksei Petrenko
     </p>
 
     <h2>Recent publications:</h2>
+    <small>
+    <b>2021:</b>
+    <ul><li>
+      <u>A Petrenko</u>, E Wijmans, B Shacklett, V Koltun.
+      <b>Megaverse: Simulating Embodied Agents at One Million Experiences per Second.</b>
+      <i>In ICML2021.</i><br />
+      <a href="https://arxiv.org/abs/2107.08170">[Paper]</a>
+      <a href="https://github.com/alex-petrenko/megaverse">[Code]</a>
+      <a href="https://www.megaverse.info/">[Website]</a><br />
+      The fastest (at the time of release) embodied simulator for AI research. 1,000,000+ FPS of immersive experience on a single machine.
 
-    <p><small>
-      <b><i>(2020) Sample Factory: Egocentric 3D Control from Pixels at 100000 FPS with Asynchronous Reinforcement Learning</i></b><br />
-      <i><u>Aleksei Petrenko</u>, Zhehui Huang, Tushar Kumar, Gaurav Sukhatme, Vladlen Koltun</i><br />
-      <i>International Conference on Machine Learning (ICML), 2020</i><br />
+      <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+        <img class="images" src="/assets/megaverse_1.gif" width="320" alt="Megaverse gif" />
+        <img class="images" src="/assets/megaverse_2.gif" width="320" alt="Megaverse gif" />
+      </div>
+
+    </li>
+    <li>
+      S Batra*, Z Huang*, <u>A Petrenko*</u>, T Kumar, A Molchanov, G Sukhatme.
+      <b>Decentralized Control of Quadrotor Swarms with End-to-end Deep Reinforcement Learning.</b>
+      <i>In CORL2021.</i><br />
+      <a href="https://arxiv.org/abs/2109.07735">[Paper]</a>
+      <a href="https://github.com/Zhehui-Huang/quad-swarm-rl/">[Code]</a>
+      <a href="https://sites.google.com/view/swarm-rl">[Website]</a>
+
+      End-to-end learning of neural policies for quadrotor swarms with sim-to-real transfer.
+
+      <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+        <img class="images" src="/assets/quads_1.gif" width="320" alt="Quads gif" />
+        <img class="images" src="/assets/quads_2.gif" width="320" alt="Quads gif" />
+      </div>
+
+    </li>
+    <li>
+      S Hegde, A Kanervisto, <u>A Petrenko</u>.
+      <b>Agents that Listen: High-Throughput Reinforcement Learning with Multiple Sensory Systems.</b>
+      <i>In IEEE Conference on Games, 2021.</i><br />
+      <a href="https://arxiv.org/abs/2107.02195">[Paper]</a>
+      <a href="https://github.com/hegde95/Agents_that_Listen">[Code]</a>
+      <a href="https://sites.google.com/view/sound-rl">[Website]</a>
+    </li>
+    <li>
+      B Shacklett, E Wijmans, <u>A Petrenko</u>, M Savva, D Batra, V Koltun, K Fatahalian.
+      <b>Large Batch Simulation for Deep Reinforcement Learning.</b>
+      <i>In ICLR2021.</i><br>
+      <a href="https://arxiv.org/abs/2103.07013">[Paper]</a>
+      <a href="https://github.com/shacklettbp/bps-nav">[Code]</a>
+    </li>
+    </ul>
+    <b>2020:</b>
+    <ul><li>
+      <u>A Petrenko</u>, Z Huang, T Kumar, G Sukhatme, V Koltun.
+      <b>Sample Factory: Egocentric 3D Control from Pixels at 100000 FPS with Asynchronous Reinforcement Learning.</b> 
+      <i>In ICML2020.</i><br />
       <a href="https://arxiv.org/abs/2006.11751">[Paper]</a>
       <a href="https://github.com/alex-petrenko/sample-factory">[Code]</a>
       <a href="https://sites.google.com/view/sample-factory/home">[Website]</a>
@@ -54,16 +107,16 @@ title: Aleksei Petrenko
       <a href="https://analyticsindiamag.com/intels-new-ai-system-can-optimise-reinforcement-learning-training-on-a-single-system/">[Press #2]</a>
       <a href="https://news.ycombinator.com/item?id=23875367">[Press #3]</a>
       <a href="https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/powerful-ai-can-now-be-trained-on-a-single-computer">[Press #4]</a>
-    </small></p>
+      <br>
+      Reinforcement learning framework with the highest single-machine training throughput at the time of publication, ~10x faster
+      than traditional synchronous RL implementations. SOTA results in challenging VizDoom and DMLab environments.
 
-
-    Reinforcement learning framework with the highest single-machine training throughput at the time of publication, ~10x faster
-    than traditional synchronous RL implementations. SOTA results in challenging VizDoom and DMLab environments.
-
-    <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
-      <img class="images" src="/assets/sf_battle.gif" alt="VizDoom maze sparse" />
-      <img class="images" src="/assets/sf_duel.gif" alt="VizDoom maze" />
-    </div>
+      <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+        <img class="images" src="/assets/sf_battle.gif" width="320" alt="VizDoom maze sparse" />
+        <img class="images" src="/assets/sf_duel.gif" width="320" alt="VizDoom maze" />
+      </div>
+    </li></ul>
+    </small>
 
     <h2>Research projects:</h2>
 
