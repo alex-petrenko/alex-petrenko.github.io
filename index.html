@@ -14,37 +14,56 @@ title: Aleksei Petrenko
     </i></p>
 
     <p>
-      I am a PhD student in Robotics and Embedded Systems Lab at University of Southern California, advised by
+      I am a PhD candidate in Robotics and Embedded Systems Lab at the University of Southern California, advised by
       <a href="https://viterbi.usc.edu/directory/faculty/Sukhatme/Gaurav">prof. Gaurav Sukhatme</a>.
       My research focus is deep reinforcement learning and machine learning for robotics.
       <br /><br />
       
-      Before my PhD I spent 8 years in industry, working on
-      software design and architecture, machine learning, algorithms, 3D graphics, computer vision, and virtual reality.
+      Before going to academia I spent 8 years in industry, working on
+      software R&D, machine learning, algorithms, 3D graphics, computer vision, and virtual reality.
     </p>
 
     <h2>Research interests</h2>
     <p>
-      I am interested in the study of intelligent agents. I believe that one of the ways towards general intelligence is through creating increasingly complex
-      virtual worlds and training/evolving agents in these worlds that can manipulate their environment to reach goals.
-    </p>
-    <p>
-      Throuhgout my academic journey I paid a lot of attention to performance aspects of simulation and learning: I think that access to large 
-      amounts of diverse data and the ability to quickly iterate on ideas is key to accelerating research.
-    </p>
-    <p>
+      I study computationally efficient methods of training agents in simulation using reinforcement learning, as well as problems of sim-to-real transfer.
       Right now I am actively working on:
       <ul>
         <li>Highly optimized open-source software for deep reinforcement learning, such as RL algorithms and simulators.</li>
-        <li>RL & population-based training in the context of dexterous robotic manipulation.</li>
-        <li>Reinforcement learning for quadrotor swarms.</li>
+        <li>Advanced training scenarios such as population-based training and self-play.</li>
+        <li>Reinforcement learning in robotics: dexterous manipulation and quadrotor swarms.</li>
       </ul>
 
-      In the past I also worked on exploration in RL, memory in embodied agents, and stochastic future prediciton.
+      In the past I also worked on exploration in RL, memory in embodied agents, and stochastic future prediction.
     </p>
 
     <h2>Recent publications:</h2>
     <small>
+    <b>2022:</b>
+    <ul><li>
+      <u>A Petrenko</u>, A Allshire, G State, A Handa, V Makoviychuk.
+      <b>DexPBT: Scaling up Dexterous Manipulation for Hand-Arm Systems with Population Based Training.</b>
+      <i>Submitted to ICRA 2023.</i><br />
+      <!-- <a href="https://arxiv.org/abs/2107.08170">[Paper]</a>
+      <a href="https://github.com/alex-petrenko/megaverse">[Code]</a>
+      <a href="https://www.megaverse.info/">[Website]</a><br /> -->
+      Large-scale reinforcement learning for high-DoF hand-arm systems.
+
+      <!-- <div style="display:block;margin-top: 15px; margin-bottom: 30px" align="center">
+        <img class="images" src="/assets/megaverse_1.gif" width="320" alt="Megaverse gif" />
+        <img class="images" src="/assets/megaverse_2.gif" width="320" alt="Megaverse gif" />
+      </div> -->
+
+    </li>
+    <li>
+      A Handa*, A Allshire*, V Makoviychuk*, <u>A Petrenko*</u>, R Singh*, J Liu*, D Makoviichuk, K Van Wyk, A Zhurkevich, B Sundaralingam, Y Narang, J Lafleche, D Fox, G State.
+      <b>DeXtreme: Transfer of Agile In-hand Manipulation from Simulation to Reality.</b>
+      <i>Submitted to ICRA 2023.</i><br />
+      Learning dexterous in-hand manipulation in vectorized simulation and deploying policies on the real robot.
+      <!-- <a href="https://arxiv.org/abs/2107.02195">[Paper]</a>
+      <a href="https://github.com/hegde95/Agents_that_Listen">[Code]</a>
+      <a href="https://sites.google.com/view/sound-rl">[Website]</a> -->
+    </li>
+    </ul>
     <b>2021:</b>
     <ul><li>
       <u>A Petrenko</u>, E Wijmans, B Shacklett, V Koltun.
@@ -118,7 +137,46 @@ title: Aleksei Petrenko
     </li></ul>
     </small>
 
-    <h2>Research projects:</h2>
+    <h2>Selected open-source projects:</h2>
+    <ul>
+      <li>
+      <i><a href="https://github.com/alex-petrenko/sample-factory">https://github.com/alex-petrenko/sample-factory</a></i><br />
+      High-throughput asynchronous reinforcement learning framework.
+      </li>
+      <li>
+      <i><a href="https://github.com/alex-petrenko/megaverse">https://github.com/alex-petrenko/megaverse</a></i><br />
+      Embodied simulation for RL research at 1,000,000 FPS.
+      </li>
+      <li>
+      <i><a href="https://github.com/alex-petrenko/faster-fifo">https://github.com/alex-petrenko/faster-fifo</a></i><br />
+      A faster alternative to built-in Python multiprocessing.Queue.
+      </li>
+      <li>
+      <i><a href="https://github.com/alex-petrenko/signal-slot">https://github.com/alex-petrenko/signal-slot</a></i><br />
+      Python implementation of Qt-like signal & slot asynchronous programming paradigm with focus on multiprocessing applications.
+      </li>
+      <li>
+        <i><a href="https://github.com/alex-petrenko/tf-reinforce">github.com/alex-petrenko/tf-reinforce</a></i><br />
+        Tensorflow implementation of classic
+        policy gradient algorithm for continuous control tasks
+      </li>
+      <li>
+          <i><a href="https://github.com/alex-petrenko/snake-rl">github.com/alex-petrenko/snake-rl</a></i><br />
+          RL algorithms for classic Snake game
+          (<a href="https://youtu.be/bh_5aIqVTUY">youtube</a>)
+        </li>
+      <li>
+        <i><a href="https://github.com/alex-petrenko/udacity-deep-learning/blob/master/hyperopt.py">hyperopt.py</a></i><br />
+        Evolutionary algorithm for hyperparameter optimization in deep learning (it works!)
+      </li>
+      <li>
+        <i><a href="https://github.com/alex-petrenko/udacity-linear-algebra-cpp">github.com/alex-petrenko/udacity-linear-algebra-cpp</a></i><br />
+        Small linear algebra library in C++11/14 with templates, SFINAE, etc.
+      </li>
+    </ul>
+
+
+    <h2>Other research projects:</h2>
 
     <h3>Curiosity-driven Exploration in RL (2018)</h3>
     <i><a href="https://github.com/alex-petrenko/curious-rl">github.com/alex-petrenko/curious-rl</a></i><br />
@@ -201,31 +259,7 @@ title: Aleksei Petrenko
     </p>
     </div>
     </div>
-
-    <h2>Other projects & repositories</h2>
-    <ul>
-      <li>
-        <i><a href="https://github.com/alex-petrenko/tf-reinforce">github.com/alex-petrenko/tf-reinforce</a></i><br />
-        Tensorflow implementation of classic
-        policy gradient algorithm for continuous control tasks
-      </li>
-      <li>
-          <i><a href="https://github.com/alex-petrenko/snake-rl">github.com/alex-petrenko/snake-rl</a></i><br />
-          RL algorithms for classic Snake game
-          (<a href="https://youtu.be/bh_5aIqVTUY">youtube</a>)
-        </li>
-      <li>
-        <i><a href="https://github.com/alex-petrenko/udacity-deep-learning/blob/master/hyperopt.py">hyperopt.py</a></i><br />
-        Evolutionary algorithm for hyperparameter optimization in deep learning (it works!)
-      </li>
-      <li>
-        <i><a href="https://github.com/alex-petrenko/udacity-linear-algebra-cpp">github.com/alex-petrenko/udacity-linear-algebra-cpp</a></i><br />
-        Small linear algebra library in C++11/14 with templates, SFINAE, etc.
-      </li>
-    </ul>
-
-
-    <h2>Footnote</h2>
-    <p>I don't mind occasionally getting a couple of emails. Let's <a href="mailto:apetrenko1991@gmail.com">get in touch!</a>
+    <br/>
+    <p>Let's <a href="mailto:apetrenko1991@gmail.com">get in touch!</a>
   </div>
 </div>
