@@ -5,7 +5,7 @@ title: Aleksei Petrenko
 <div>
   <h1 class="title">Hi there, I'm Aleksei Petrenko</h1>
 
-  <img class="photo" src="/assets/montana_2020.jpg" alt="Aleksei photo" />
+  <img class="photo" src="/assets/2026_08_headshot.jpg" alt="Aleksei photo" />
 
   <div class="content-col">
     <p class="modest-link"><i>
@@ -30,12 +30,13 @@ title: Aleksei Petrenko
 
     <h2>Research interests</h2>
     <p>
-      I study computationally efficient methods of training agents in simulation using reinforcement learning, as well as problems of sim-to-real transfer.
+      I study computationally efficient methods for training in simulation using reinforcement learning, as well as problems of sim-to-real transfer.
       Recently I've been working on:
       <ul>
         <li>Highly optimized open-source software for deep reinforcement learning, such as RL algorithms and simulators.</li>
         <li>Advanced training scenarios such as population-based training and self-play.</li>
-        <li>Reinforcement learning in robotics: dexterous manipulation and quadrotor swarms.</li>
+        <li>Reinforcement learning in robotics: dexterous manipulation, autonomous driving, drones.</li>
+        <li>RLVR Post-Training for LLM agents.</li>
       </ul>
 
       In the past I also worked on exploration in RL, memory in embodied agents, and stochastic future prediction.
@@ -46,6 +47,46 @@ title: Aleksei Petrenko
 
     <h2>Recent publications:</h2>
     <small>
+    <b>2026:</b>
+    <ul><li>
+      <u>A Petrenko</u>, B Lipkin, K Chen, E Wijmans, M Cusumano-Towner, R Giryes, P Krähenbühl.
+      <b>Entropy-Preserving Reinforcement Learning.</b>
+      <i>In ICLR 2026.</i><br />
+      <a href="https://arxiv.org/abs/2603.11682">[Paper]</a><br />
+      Policy gradient methods quietly collapse policy entropy during training; we introduce mechanisms that keep policies diverse, performant, and retrainable on new tasks.
+    </li></ul>
+    <b>2025:</b>
+    <ul><li>
+      M Cusumano-Towner, D Hafner, A Hertzberg, B Huval, <u>A Petrenko</u>, E Vinitsky, E Wijmans, T Killian, S Bowers, O Sener, P Krähenbühl, V Koltun.
+      <b>Robust Autonomy Emerges from Self-Play.</b>
+      <i>In ICML 2025.</i><br />
+      <a href="https://arxiv.org/abs/2502.03349">[Paper]</a><br />
+      Gigaflow, a batched driving simulator that trains on 42 years of driving experience per hour on a single 8-GPU node: robust and naturalistic driving emerges from 1.6 billion km of self-play, without ever seeing human data.
+    </li>
+    <li>
+      K Chen, M Cusumano-Towner, B Huval, <u>A Petrenko</u>, J Hamburger, V Koltun, P Krähenbühl.
+      <b>Reinforcement Learning for Long-Horizon Interactive LLM Agents.</b>
+      <i>arXiv preprint, 2025.</i><br />
+      <a href="https://arxiv.org/abs/2502.01600">[Paper]</a><br />
+      LOOP, a memory-efficient policy gradient method without a value network, trains LLM agents directly in stateful environments.
+    </li></ul>
+    <b>2024:</b>
+    <ul><li>
+      S Batra, B Tjanaka, M Fontaine, <u>A Petrenko</u>, S Nikolaidis, G Sukhatme.
+      <b>Proximal Policy Gradient Arborescence for Quality Diversity Reinforcement Learning.</b>
+      <i>In ICLR 2024 (spotlight).</i><br />
+      <a href="https://arxiv.org/abs/2305.13795">[Paper]</a><br />
+      Combining differentiable quality-diversity search with on-policy RL to train collections of high-performing and behaviorally diverse locomotion policies.
+    </li></ul>
+    <b>2023:</b>
+    <ul><li>
+      Z Huang, S Batra, T Chen, R Krupani, T Kumar, A Molchanov, <u>A Petrenko</u>, J Preiss, Z Yang, G Sukhatme.
+      <b>QuadSwarm: A Modular Multi-Quadrotor Simulator for Deep Reinforcement Learning with Direct Thrust Control.</b>
+      <i>In ICRA 2023 Workshop on the Role of Robotics Simulators for UAVs.</i><br />
+      <a href="https://arxiv.org/abs/2306.09537">[Paper]</a>
+      <a href="https://github.com/Zhehui-Huang/quad-swarm-rl">[Code]</a><br />
+      A fast modular multi-quadrotor simulator with direct thrust control and domain randomization for sim-to-real reinforcement learning.
+    </li></ul>
     <b>2022:</b>
     <ul><li>
       <u>A Petrenko</u>, A Allshire, G State, A Handa, V Makoviychuk.
