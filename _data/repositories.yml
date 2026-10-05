@@ -1,0 +1,12 @@
+github_users:
+  - alex-petrenko
+
+repo_description_lines_max: 2
+
+github_repos:
+  - alex-petrenko/sample-factory
+  - alex-petrenko/megaverse
+  - alex-petrenko/faster-fifo
+  - alex-petrenko/signal-slot
+  - alex-petrenko/4dvideo
+  - alex-petrenko/curious-rl

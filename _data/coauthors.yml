@@ -1,0 +1,7 @@
+# Co-author names in the publication list link to these pages (keyed by lowercase last name)
+"koltun":
+  - firstname: ["Vladlen", "V."]
+    url: https://vladlen.info/
+"sukhatme":
+  - firstname: ["Gaurav", "G.", "Gaurav S."]
+    url: https://viterbi.usc.edu/directory/faculty/Sukhatme/Gaurav

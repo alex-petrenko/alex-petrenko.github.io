@@ -1,0 +1,17 @@
+# Venue badges in the publication list: abbr -> link (and optional color)
+"ICLR":
+  url: https://iclr.cc
+"ICML":
+  url: https://icml.cc
+"RSS":
+  url: https://roboticsconference.org
+"ICRA":
+  url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra
+"CoRL":
+  url: https://www.corl.org
+"CoG":
+  url: https://ieee-cog.org
+"arXiv":
+  url: https://arxiv.org
+"ICRA-W":
+  url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra

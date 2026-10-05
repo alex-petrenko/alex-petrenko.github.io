@@ -1,0 +1,17 @@
+# Social links shown on the home page and in the footer (order = display order).
+# Keys are defined by the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+cv_pdf: /assets/cv.pdf
+email: apetrenko1991@gmail.com
+scholar_userid: G2zXCNkAAAAJ
+github_username: alex-petrenko
+linkedin_username: apetrenko-nn
+x_username: petrenko_ai
+facebook_id: apetrenko.nn
+youtube:
+  logo: /assets/img/youtube.svg
+  title: YouTube
+  url: https://www.youtube.com/channel/UCP_X2a0Gt5Y5oAonoV4hBQw
+sketchfab:
+  logo: /assets/img/sketchfab.svg
+  title: Sketchfab
+  url: https://sketchfab.com/apetrenko1991/models?sort_by=-viewCount
