@@ -1,6 +1,9 @@
 # Social links shown on the home page and in the footer (order = display order).
 # Keys are defined by the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/cv.pdf
+cv:
+  logo: /assets/img/cv-doc.svg
+  title: CV (PDF)
+  url: /assets/cv.pdf
 email: apetrenko1991@gmail.com
 scholar_userid: G2zXCNkAAAAJ
 github_username: alex-petrenko

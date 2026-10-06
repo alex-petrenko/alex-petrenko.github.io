@@ -1,0 +1,637 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+// ============================================================================
+// Site-specific styles. Kept in this file (not a partial) so that every style
+// change also changes this file's cache-busting hash and browsers reload it.
+// ============================================================================
+// Site-specific styles for alex-petrenko.github.io (loaded last from assets/css/main.scss).
+// Goal: the calm single-column look of the old site, with al-folio's polish.
+
+// ---------------------------------------------------------------- typography
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+:root,
+html[data-theme="light"] {
+  --global-text-color: #1f2328;
+  --global-text-color-light: #6b7280;
+  --global-theme-color: #2a6fdb;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #6ea8ff;
+}
+
+.post-title {
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.post-header .desc:empty {
+  display: none;
+}
+
+// Justified text like the old site (user preference), without automatic hyphenation.
+article p,
+article li,
+.post p,
+.pub .pub-text,
+.pub .pub-tldr {
+  text-align: justify;
+  hyphens: manual; // no automatic word breaks (user preference, like the old site)
+  -webkit-hyphens: manual;
+}
+
+// names are never hyphenated
+.pub .pub-authors,
+.pub .pub-title,
+.pub-me {
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+.pub-me {
+  white-space: nowrap;
+}
+
+// sentence case for theme-generated lowercase headings ("selected publications", project categories)
+article h2:not(.card-title)::first-letter {
+  text-transform: uppercase;
+}
+
+article h2,
+article h4,
+.post h2 {
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+article h2 {
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: 0.35rem;
+}
+
+article h4 {
+  font-size: 1.2rem;
+}
+
+// Home: quote under the title, photo on the right
+.home-quote {
+  font-style: italic;
+  margin-bottom: 1rem;
+  a {
+    color: var(--global-text-color);
+  }
+  .src {
+    color: var(--global-text-color-light);
+    font-style: normal;
+  }
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: 30.6%; // photo cropped by 10% (face stays the same size)
+    margin-left: 1.25rem !important;
+    margin-bottom: 0.4rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.profile img {
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+// ---------------------------------------------------------------- publications
+ol.bibliography {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    margin-bottom: 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  li:first-child {
+    border-top: none;
+    padding-top: 0.6rem;
+  }
+}
+
+.publications h2.bibliography {
+  // year headers on the publications page
+  text-align: left;
+  border-bottom: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d333b;
+  margin: 2rem 0 0.4rem;
+  padding: 0;
+}
+
+.pub {
+  .pub-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .pub-title {
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  .pub-authors {
+    color: var(--global-text-color);
+  }
+
+  .pub-me {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .pub-venue {
+    font-style: italic;
+  }
+
+  .pub-links a {
+    white-space: nowrap;
+  }
+
+  .pub-tldr {
+    color: #4b5563;
+    margin-top: 0.2rem;
+  }
+
+  .pub-media {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 0.8rem;
+
+    img,
+    video {
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+      background: #fff;
+      object-fit: contain;
+    }
+  }
+
+
+  .pub-media-2 img,
+  .pub-media-2 video {
+    width: calc(50% - 6px);
+    height: auto;
+  }
+}
+
+// ---------------------------------------------------------------- open source page
+.os-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0.5rem 0 1.5rem;
+
+  .os-stat {
+    flex: 1 1 140px;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    text-align: center;
+
+    .num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--global-text-color);
+      line-height: 1.2;
+    }
+    .lbl {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+.os-project {
+  margin-bottom: 2.25rem;
+
+  .os-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin-bottom: 0.3rem;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    .os-meta {
+      font-size: 0.9rem;
+      color: var(--global-text-color-light);
+    }
+  }
+
+  p {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.os-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  &.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  figcaption {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .os-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pub .pub-media-2 {
+    flex-direction: column;
+    align-items: center;
+    img,
+    video {
+      width: 100%;
+    }
+  }
+}
+
+// ---------------------------------------------------------------- social icons (home page)
+.social {
+  margin-top: 2.5rem;
+
+  .contact-icons {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem 1.1rem;
+
+    a,
+    a i {
+      color: #6b7280 !important;
+    }
+    a:hover,
+    a:hover i {
+      color: var(--global-theme-color) !important;
+    }
+
+    a svg {
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      vertical-align: middle;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .contact-note {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.75rem;
+  }
+}
+
+.social a i::before {
+  color: #6b7280 !important;
+}
+.social a:hover i::before {
+  color: var(--global-theme-color) !important;
+}
+
+html[data-theme="dark"] .pub .pub-tldr {
+  color: #b0b8c4;
+}
+
+.social a svg image {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+// ---------------------------------------------------------------- publications page header
+.pubs-note {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.6rem;
+}
+
+#bibsearch {
+  width: 100%;
+  max-width: 320px;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--global-text-color);
+  margin-bottom: 0.5rem;
+}
+
+// ---------------------------------------------------------------- projects page cards
+.projects {
+  h2.category {
+    color: var(--global-text-color);
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .card {
+    height: 100%;
+
+    img,
+    .card-img-top {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    .card-body {
+      text-align: left;
+      padding: 0.8rem 1rem 1rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ---------------------------------------------------------------- footer
+footer {
+  font-size: 0.85rem;
+}
+
+html[data-theme="dark"] .publications h2.bibliography {
+  color: #c9d1d9;
+}
+
+// headings inside project pages (e.g. "Mobile 3D scanner")
+.post article h2,
+.post article h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+// project cards: GitHub icon aligned with the card text
+.projects .card .github-icon {
+  padding-left: 1rem;
+  padding-bottom: 0.6rem;
+}
+.projects .card .row {
+  margin-left: 0 !important;
+}
+
+// a lone gallery item is centred
+.os-gallery.single {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  figure {
+    width: 33%;
+  }
+}
+
+// social icons: identical boxes on one baseline
+.social .contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+.social .contact-icons a i {
+  line-height: 1;
+}
+.social .contact-icons a svg {
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+}
+.social a svg image {
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+}
+
+// footer on one line
+footer .container {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// CV timeline: years in a hanging column
+.cv-timeline {
+  list-style: none;
+  padding-left: 0;
+  li {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0 0.75rem;
+    margin-bottom: 0.35rem;
+    text-align: left;
+    hyphens: manual;
+  }
+  .yr {
+    font-weight: 600;
+    color: var(--global-text-color);
+    white-space: nowrap;
+  }
+}
+
+// ---------------------------------------------------------------- compact publication rows
+// one image -> thumbnail beside the text; GIF pairs keep the large layout (.pub-wide)
+.pub .pub-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+
+  .pub-thumb {
+    flex: 0 0 30%;
+    max-width: 240px;
+    display: flex;
+    justify-content: flex-start;
+
+    img,
+    video {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 175px;
+      background: #fff;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 6px;
+      padding: 4px;
+      cursor: zoom-in;
+    }
+  }
+
+  .pub-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .pub .pub-row {
+    flex-direction: column;
+    .pub-thumb {
+      max-width: 100%;
+      flex-basis: auto;
+      width: 100%;
+    }
+  }
+}
+
+.pub .pub-media img {
+  cursor: zoom-in;
+}
+// zoomed overlay image sits above the sticky navbar
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 2000;
+}
+
+.home-quote,
+.post-title {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
+
+// paper titles on their own (ragged) line: justified bold titles open huge word gaps
+.pub .pub-title {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.1rem;
+}
+
+// single video/GIF under a publication row (e.g. DeXtreme teaser)
+.pub .pub-media-1 img,
+.pub .pub-media-1 video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}
+
+// page intro line at body size
+.post-header .post-description,
+.post-description {
+  font-size: 1rem;
+  color: var(--global-text-color-light);
+}
+
+.pubs-more {
+  margin-top: 0.75rem;
+  text-align: right;
+  font-weight: 500;
+}
+
+// footer: social icons row on every page
+footer .footer-social {
+  margin-bottom: 0.35rem;
+  a {
+    color: #6b7280;
+    margin: 0 0.45rem;
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+  a:hover {
+    color: var(--global-theme-color);
+  }
+  svg,
+  svg image {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+}
+
+// short card blurbs are not body prose: ragged right avoids stretched gaps in narrow cards
+.projects .card .card-text,
+.projects .card .card-title {
+  text-align: left !important;
+}

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: Open-source software, research side projects, and applied work in industry.
+description: Research side projects and applied work in industry.
 nav: true
-nav_order: 3
-display_categories: [open source, research, industry]
+nav_order: 4
+display_categories: [research, industry]
 horizontal: false
 ---
 

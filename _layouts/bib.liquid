@@ -1,0 +1,66 @@
+---
+---
+{%- comment -%}
+  Local override of al_folio_core's bib.liquid (publication entry).
+  Old-site style: bold title, compact author list (initials), italic venue,
+  [Paper] [Code] ... links, one-line summary.
+  Media: thumb    -> static figure shown as a compact thumbnail next to the text (every paper);
+         preview, preview2 -> optional GIFs/videos shown large, side by side under the text.
+  All images open full size on click (medium-zoom, data-zoomable).
+  Custom bib fields: venue (display string), thumb, preview2, poster (still image for video previews).
+{%- endcomment -%}
+{%- assign media = '' | split: '' -%}
+{%- if entry.preview %}{% assign media = media | push: entry.preview %}{% endif -%}
+{%- if entry.preview2 %}{% assign media = media | push: entry.preview2 %}{% endif -%}
+<div class="pub" id="{{ entry.key }}">
+  <div class="pub-row">
+    {%- if entry.thumb %}
+    <div class="pub-thumb">
+      {%- if entry.thumb contains '://' %}{% assign tsrc = entry.thumb %}{% else %}{% assign tsrc = entry.thumb | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif %}
+      <img src="{{ tsrc }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
+    </div>
+    {%- endif %}
+    <div class="pub-text">
+      <span class="pub-title">{{ entry.title }}.</span>
+      <span class="pub-authors">
+        {%- for author in entry.author_array -%}
+          {%- assign last_clean = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+          {%- assign marks = author.last | regex_replace: '[^*∗†‡§¶‖&^]', '' -%}
+          {%- assign initial = author.first | slice: 0 -%}
+          {%- assign name = initial | append: ' ' | append: last_clean -%}
+          {%- if site.scholar.last_name contains last_clean -%}
+            <span class="pub-me">{{ name }}</span>{{ marks }}
+          {%- else -%}
+            {{ name }}{{ marks }}
+          {%- endif -%}
+          {%- unless forloop.last -%}, {% endunless -%}
+        {%- endfor -%}.
+      </span>
+      <span class="pub-venue">{% if entry.venue %}{{ entry.venue }}{% else %}{{ entry.booktitle }}{{ entry.journal }}, {{ entry.year }}{% endif %}.</span>
+      <span class="pub-links">
+        {%- if entry.arxiv %}<a href="https://arxiv.org/abs/{{ entry.arxiv }}">[Paper]</a>{% endif -%}
+        {%- if entry.pdf %} <a href="{% if entry.pdf contains '://' %}{{ entry.pdf }}{% else %}{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}{% endif %}">[PDF]</a>{% endif -%}
+        {%- if entry.code %} <a href="{{ entry.code }}">[Code]</a>{% endif -%}
+        {%- if entry.website %} <a href="{{ entry.website }}">[Website]</a>{% endif -%}
+        {%- if entry.video %} <a href="{{ entry.video }}">[Video]</a>{% endif -%}
+        {%- if entry.additional_info %} {{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif -%}
+      </span>
+      {%- if entry.abstract %}
+        <div class="pub-tldr">{{ entry.abstract }}</div>
+      {%- endif %}
+    </div>
+  </div>
+  {%- if media.size > 0 %}
+  <div class="pub-media pub-media-{{ media.size }}">
+    {%- for m in media -%}
+      {%- if m contains '://' %}{% assign src = m %}{% else %}{% assign src = m | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif -%}
+      {%- assign ext = m | split: '.' | last | split: '?' | first | downcase -%}
+      {%- if ext == 'mp4' or ext == 'webm' -%}
+        <video src="{{ src }}"{% if entry.poster %} poster="{{ entry.poster | prepend: '/assets/img/publication_preview/' | relative_url }}"{% endif %} autoplay muted loop playsinline></video>
+      {%- else -%}
+        <img src="{{ src }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {%- endif %}
+</div>

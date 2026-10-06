@@ -1,15 +1,14 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: Publications in reverse chronological order.
+title: Publications
 nav: true
 nav_order: 2
 ---
 
 <!-- _pages/publications.md -->
 
-\* equal contribution. Full list on [Google Scholar](https://scholar.google.com/citations?user=G2zXCNkAAAAJ).
+<p class="pubs-note">* equal contribution · full list on <a href="https://scholar.google.com/citations?user=G2zXCNkAAAAJ">Google Scholar</a></p>
 
 <!-- Bibsearch Feature -->
 

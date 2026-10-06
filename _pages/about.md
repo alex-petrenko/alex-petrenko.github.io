@@ -1,8 +1,7 @@
 ---
 layout: about
-title: about
+title: Home
 permalink: /
-subtitle: Senior Research Scientist at Apple. Reinforcement learning at scale for LLM agents, robotics, and autonomous driving.
 
 profile:
   align: right
@@ -10,18 +9,16 @@ profile:
   image_circular: false # crops the image to make it circular
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # social icons live in the footer on every page
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false # no news list on the home page
 
 latest_posts:
   enabled: false
 ---
 
-_[Making computers do things at which, at the moment, people are better.](https://www.amazon.com/Artificial-Intelligence-Elaine-Rich/dp/0070522634) (Rich and Knight, 1991)_
+<p class="home-quote"><a href="https://www.amazon.com/Artificial-Intelligence-Elaine-Rich/dp/0070522634">Making computers do things at which, at the moment, people are better.</a> <span class="src">(Rich and Knight, 1991)</span></p>
 
 I am a research scientist at Apple, working with [Vladlen Koltun](https://vladlen.info/), currently on RLVR for interactive digital agents.
 
@@ -33,7 +30,7 @@ During my PhD I worked at NVIDIA on high-throughput simulation and RL for [robot
 on massively parallel [3D rendering](https://www.megaverse.info) and [high-throughput reinforcement learning](https://www.samplefactory.dev/).
 Before going to academia I spent 8 years in industry, working on software R&D, machine learning, algorithms, 3D graphics, computer vision, and virtual reality.
 
-#### Research interests
+## Research interests
 
 I study computationally efficient methods for training in simulation using reinforcement learning, as well as problems of sim-to-real transfer.
 Recently I've been working on:

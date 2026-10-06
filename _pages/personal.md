@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /about/
-title: personal
+title: Personal
 nav: true
 nav_order: 6
 description: Since this is my personal webpage, here's some random information about me!
