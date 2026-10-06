@@ -39,10 +39,9 @@ description: Libraries and tools I wrote and maintain.
     <span class="os-meta">★ 230 · <a href="https://www.megaverse.info/">website</a> · <a href="https://arxiv.org/abs/2107.08170">paper (ICML 2021)</a></span>
   </div>
   <p>The fastest (at the time of release) embodied simulator for AI research: 1,000,000+ FPS of immersive, physics-based multi-agent experience on a single machine.</p>
-  <div class="os-gallery">
+  <div class="os-gallery cols-2">
     <figure><img src="/assets/img/publication_preview/megaverse_1.gif" alt="Megaverse TowerBuilding" loading="lazy"><figcaption>RL agent building a tower</figcaption></figure>
     <figure><img src="/assets/img/publication_preview/megaverse_2.gif" alt="Megaverse obstacle course" loading="lazy"><figcaption>Random obstacle course</figcaption></figure>
-    <figure><img src="/assets/img/opensource/sample-factory_megaverse.gif" alt="Megaverse environments" loading="lazy"><figcaption>Megaverse-8 environments</figcaption></figure>
   </div>
 </div>
 

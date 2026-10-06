@@ -7,7 +7,7 @@ nav_order: 5
 description: Timeline of my education, research, and work.
 ---
 
-<p style="font-size: 1.4em;"><b><a href="/assets/cv.pdf">Download my full CV (PDF)</a></b></p>
+<p class="cv-download"><a href="/assets/cv.pdf"><i class="fa-solid fa-file-pdf"></i> Download full CV (PDF)</a></p>
 
 <ul class="cv-timeline">
   <li><span class="yr">2026</span><span>My son <a href="/assets/leo.jpg">Leo</a> was born ❤️</span></li>

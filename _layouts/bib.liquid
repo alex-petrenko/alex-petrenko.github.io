@@ -7,7 +7,7 @@
   Media: thumb    -> static figure shown as a compact thumbnail next to the text (every paper);
          preview, preview2 -> optional GIFs/videos shown large, side by side under the text.
   All images open full size on click (medium-zoom, data-zoomable).
-  Custom bib fields: venue (display string), thumb, preview2, poster (still image for video previews).
+  Custom bib fields: venue (display string), thumb, youtube + youtube_start (autoplaying clip instead of previews), thumb_visible (aspect of the visible top part of thumb, e.g. figure above its caption), preview2, poster (still image for video previews).
 {%- endcomment -%}
 {%- assign media = '' | split: '' -%}
 {%- if entry.preview %}{% assign media = media | push: entry.preview %}{% endif -%}
@@ -17,7 +17,14 @@
     {%- if entry.thumb %}
     <div class="pub-thumb">
       {%- if entry.thumb contains '://' %}{% assign tsrc = entry.thumb %}{% else %}{% assign tsrc = entry.thumb | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif %}
+      {%- if entry.thumb_visible %}
+      {%- comment -%} show only the top of the image (the figure); its caption is revealed on zoom {%- endcomment -%}
+      <div class="pub-thumb-clip" style="aspect-ratio: {{ entry.thumb_visible }}">
+        <img src="{{ tsrc }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
+      </div>
+      {%- else %}
       <img src="{{ tsrc }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
+      {%- endif %}
     </div>
     {%- endif %}
     <div class="pub-text">
@@ -37,26 +44,32 @@
         {%- endfor -%}.
       </span>
       <span class="pub-venue">{% if entry.venue %}{{ entry.venue }}{% else %}{{ entry.booktitle }}{{ entry.journal }}, {{ entry.year }}{% endif %}.</span>
-      <span class="pub-links">
+      <div class="pub-links">
         {%- if entry.arxiv %}<a href="https://arxiv.org/abs/{{ entry.arxiv }}">[Paper]</a>{% endif -%}
         {%- if entry.pdf %} <a href="{% if entry.pdf contains '://' %}{{ entry.pdf }}{% else %}{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}{% endif %}">[PDF]</a>{% endif -%}
         {%- if entry.code %} <a href="{{ entry.code }}">[Code]</a>{% endif -%}
         {%- if entry.website %} <a href="{{ entry.website }}">[Website]</a>{% endif -%}
         {%- if entry.video %} <a href="{{ entry.video }}">[Video]</a>{% endif -%}
         {%- if entry.additional_info %} {{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif -%}
-      </span>
+      </div>
       {%- if entry.abstract %}
         <div class="pub-tldr">{{ entry.abstract }}</div>
       {%- endif %}
     </div>
   </div>
-  {%- if media.size > 0 %}
+  {%- if entry.youtube %}
+  {%- comment -%} muted autoplaying YouTube clip (bib fields youtube = video id, youtube_start = seconds) {%- endcomment -%}
+  <div class="pub-media pub-media-1">
+    <iframe class="pub-youtube" src="https://www.youtube-nocookie.com/embed/{{ entry.youtube }}?autoplay=1&mute=1&loop=1&playlist={{ entry.youtube }}&start={{ entry.youtube_start | default: 0 }}&controls=1&modestbranding=1&rel=0&playsinline=1" title="{{ entry.title | escape }}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  {%- elsif media.size > 0 %}
   <div class="pub-media pub-media-{{ media.size }}">
     {%- for m in media -%}
       {%- if m contains '://' %}{% assign src = m %}{% else %}{% assign src = m | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif -%}
       {%- assign ext = m | split: '.' | last | split: '?' | first | downcase -%}
       {%- if ext == 'mp4' or ext == 'webm' -%}
-        <video src="{{ src }}"{% if entry.poster %} poster="{{ entry.poster | prepend: '/assets/img/publication_preview/' | relative_url }}"{% endif %} autoplay muted loop playsinline></video>
+        {%- if entry.poster %}{% assign psrc = entry.poster | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif -%}
+        <video src="{{ src }}"{% if entry.poster %} poster="{{ psrc }}" style="background-image: url('{{ psrc }}')"{% endif %} autoplay muted loop playsinline></video>
       {%- else -%}
         <img src="{{ src }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
       {%- endif -%}

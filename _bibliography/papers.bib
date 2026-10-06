@@ -23,8 +23,9 @@
   year       = {2025},
   venue      = {arXiv preprint, 2025},
   thumb      = {chen2025loop.jpg},
+  thumb_visible = {2070 / 520},
   arxiv      = {2502.01600},
-  abstract   = {LOOP, a memory-efficient policy gradient method without a value network, trains LLM agents directly in stateful environments.},
+  abstract   = {RL for long-horizon, multi-turn, tool-using LLM agents. A 32B Qwen2.5 LoRA fine-tune reached 71\% on AppWorld, 9 points above OpenAI o1, after training on just 24 scenarios.},
   annotation = {* equal contribution},
   selected   = {true}
 }
@@ -76,13 +77,13 @@
   booktitle  = {Robotics: Science and Systems (RSS)},
   year       = {2023},
   venue      = {In RSS 2023},
-  thumb      = {petrenko2023dexpbt.jpg},
-  preview    = {dexpbt_one_arm.gif},
-  preview2   = {dexpbt_two_arms.gif},
+  thumb      = {petrenko2023dexpbt_fig.jpg},
+  youtube    = {D2Wi7jDUYH8},
   arxiv      = {2305.12127},
   website    = {https://sites.google.com/view/dexpbt},
   video      = {https://www.youtube.com/watch?v=vPvFBtdfzDQ},
-  abstract   = {Large-scale reinforcement learning for high-DoF hand-arm systems.}
+  abstract   = {Large-scale reinforcement learning for high-DoF hand-arm systems.},
+  selected   = {true}
 }
 
 @inproceedings{handa2023dextreme,
@@ -92,14 +93,15 @@
   booktitle  = {IEEE International Conference on Robotics and Automation (ICRA)},
   year       = {2023},
   venue      = {In ICRA 2023},
-  thumb      = {handa2023dextreme.jpg},
+  thumb      = {handa2023dextreme_fig.jpg},
   preview    = {https://dextreme.org/static/images/teaser.mp4},
   poster     = {handa2023dextreme_poster.jpg},
   arxiv      = {2210.13702},
   website    = {https://dextreme.org},
   video      = {https://youtu.be/fdB1BqsOZgo},
   abstract   = {Learning dexterous in-hand manipulation in vectorized simulation and deploying policies on the real robot.},
-  annotation = {* equal contribution}
+  annotation = {* equal contribution},
+  selected   = {true}
 }
 
 @inproceedings{petrenko2021megaverse,
@@ -146,7 +148,8 @@
   thumb      = {hegde2021agents.jpg},
   arxiv      = {2107.02195},
   code       = {https://github.com/hegde95/Agents_that_Listen},
-  website    = {https://sites.google.com/view/sound-rl}
+  website    = {https://sites.google.com/view/sound-rl},
+  abstract   = {Adds sound to ViZDoom and shows that high-throughput RL agents learn to use audio cues alongside vision.}
 }
 
 @inproceedings{shacklett2021largebatch,
@@ -158,7 +161,8 @@
   venue      = {In ICLR 2021},
   thumb      = {shacklett2021largebatch.jpg},
   arxiv      = {2103.07013},
-  code       = {https://github.com/shacklettbp/bps-nav}
+  code       = {https://github.com/shacklettbp/bps-nav},
+  abstract   = {Batched simulation and rendering train PointGoal navigation agents at 19,000+ FPS on a single GPU, two orders of magnitude faster than prior work.}
 }
 
 @inproceedings{petrenko2020samplefactory,
@@ -168,14 +172,14 @@
   booktitle       = {International Conference on Machine Learning (ICML)},
   year            = {2020},
   venue      = {In ICML 2020},
-  thumb      = {petrenko2020samplefactory.jpg},
+  thumb      = {petrenko2020samplefactory_fig.jpg},
   preview    = {sf_battle.gif},
   preview2   = {sf_duel.gif},
   arxiv           = {2006.11751},
   code            = {https://github.com/alex-petrenko/sample-factory},
   website         = {https://sites.google.com/view/sample-factory/home},
   video           = {https://youtu.be/lLG17LKKSZc},
-  additional_info = {<a href="https://venturebeat.com/2020/06/24/intels-sample-factory-speeds-up-reinforcement-learning-training-on-a-single-pc/">[Press #1]</a> <a href="https://analyticsindiamag.com/intels-new-ai-system-can-optimise-reinforcement-learning-training-on-a-single-system/">[Press #2]</a> <a href="https://news.ycombinator.com/item?id=23875367">[Press #3]</a> <a href="https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/powerful-ai-can-now-be-trained-on-a-single-computer">[Press #4]</a>},
+  additional_info = {<span class="pub-press">Press: <a href="https://venturebeat.com/2020/06/24/intels-sample-factory-speeds-up-reinforcement-learning-training-on-a-single-pc/">[1]</a> <a href="https://analyticsindiamag.com/intels-new-ai-system-can-optimise-reinforcement-learning-training-on-a-single-system/">[2]</a> <a href="https://news.ycombinator.com/item?id=23875367">[3]</a> <a href="https://spectrum.ieee.org/tech-talk/artificial-intelligence/machine-learning/powerful-ai-can-now-be-trained-on-a-single-computer">[4]</a></span>},
   abstract        = {Reinforcement learning framework with the highest single-machine training throughput at the time of publication, about 10x faster than traditional synchronous RL implementations. SOTA results in challenging VizDoom and DMLab environments.},
   selected        = {true}
 }

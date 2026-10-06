@@ -3,6 +3,7 @@ layout: page
 title: Capturing volumetric video
 description: '"4D video" grabber and player for Intel RealSense and Google Tango (2017).'
 img: assets/img/opensource/4dvideo_triangulation.gif
+card_img: assets/img/projects/4dvideo_card.png
 importance: 8
 category: research
 github: https://github.com/alex-petrenko/4dvideo

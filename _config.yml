@@ -11,7 +11,7 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal page of Aleksei Petrenko: reinforcement learning research, publications, and projects.
 footer_text: >
-  Made in Nizhny Novgorod in 2017, updated in Playa del Rey in 2026.
+  Made in N. Novgorod, Russia in 2017, updated in Playa del Rey, USA in 2026.
 keywords: reinforcement learning, RLVR, LLM agents, robotics, simulation, Aleksei Petrenko # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

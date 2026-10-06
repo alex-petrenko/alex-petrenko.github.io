@@ -29,7 +29,9 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  {%- comment -%} a lone project gets one full-width horizontal card {%- endcomment -%}
+  {% if sorted_projects.size == 1 %}{% assign wide = true %}{% else %}{% assign wide = false %}{% endif %}
+  <div class="row row-cols-1 {% if wide %}row-cols-md-1{% else %}row-cols-md-3{% endif %}">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}

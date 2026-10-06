@@ -202,11 +202,13 @@ ol.bibliography {
     margin-top: 0.2rem;
   }
 
+  // large GIFs/videos at ~75% of the column, centred (images are not recompressed)
   .pub-media {
     display: flex;
     gap: 12px;
     justify-content: center;
-    margin-top: 0.8rem;
+    width: 75%;
+    margin: 0.8rem auto 0;
 
     img,
     video {
@@ -312,6 +314,9 @@ ol.bibliography {
 @media (max-width: 576px) {
   .os-gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .pub .pub-media {
+    width: 100%;
   }
   .pub .pub-media-2 {
     flex-direction: column;
@@ -453,14 +458,6 @@ html[data-theme="dark"] .publications h2.bibliography {
   margin-bottom: 0.8rem;
 }
 
-// project cards: GitHub icon aligned with the card text
-.projects .card .github-icon {
-  padding-left: 1rem;
-  padding-bottom: 0.6rem;
-}
-.projects .card .row {
-  margin-left: 0 !important;
-}
 
 // a lone gallery item is centred
 .os-gallery.single {
@@ -528,23 +525,26 @@ footer .container {
   gap: 1.25rem;
   align-items: flex-start;
 
+  // fixed frame: every row's text starts at the same left edge; the image keeps its own
+  // aspect ratio inside (no object-fit, so the click-to-zoom copy is never distorted)
   .pub-thumb {
-    flex: 0 0 30%;
-    max-width: 240px;
+    flex: 0 0 240px;
+    height: 160px;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    padding: 4px;
 
     img,
     video {
       display: block;
-      width: auto;
       max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
-      max-height: 175px;
-      background: #fff;
-      border: 1px solid var(--global-divider-color);
-      border-radius: 6px;
-      padding: 4px;
       cursor: zoom-in;
     }
   }
@@ -562,6 +562,8 @@ footer .container {
       max-width: 100%;
       flex-basis: auto;
       width: 100%;
+      height: auto;
+      max-height: 260px;
     }
   }
 }
@@ -588,12 +590,18 @@ footer .container {
   margin-bottom: 0.1rem;
 }
 
-// single video/GIF under a publication row (e.g. DeXtreme teaser)
+// single video/GIF under a publication row (e.g. DeXtreme teaser); the poster is also
+// painted as a background so the box is never blank while (or if) the video loads
 .pub .pub-media-1 img,
 .pub .pub-media-1 video {
   width: 100%;
-  max-width: 640px;
   height: auto;
+}
+.pub .pub-media video {
+  aspect-ratio: 16 / 9;
+  background-color: #111 !important;
+  background-size: cover;
+  background-position: center;
 }
 
 // page intro line at body size
@@ -603,10 +611,15 @@ footer .container {
   color: var(--global-text-color-light);
 }
 
-.pubs-more {
-  margin-top: 0.75rem;
-  text-align: right;
-  font-weight: 500;
+// "All publications →" on the right of the Home section header
+.pubs-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  .pubs-more {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }
 
 // footer: social icons row on every page
@@ -634,4 +647,114 @@ footer .footer-social {
 .projects .card .card-text,
 .projects .card .card-title {
   text-align: left !important;
+}
+
+// link row on its own line, never stretched by justification
+.pub .pub-links {
+  text-align: left;
+}
+
+// Home: selected publications
+.home-pubs ol.bibliography li:first-child {
+  padding-top: 0;
+}
+.home-pubs .publications {
+  margin-top: 1rem;
+}
+
+// project cards: GitHub icon pinned to the bottom of every card
+.projects .card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+.projects .card .card-github {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+}
+// a lone project: horizontal card, image on the left
+@media (min-width: 768px) {
+  .projects .card.card-wide {
+    flex-direction: row;
+    figure {
+      flex: 0 0 36%;
+      margin: 0;
+    }
+    img,
+    .card-img-top {
+      height: 100%;
+      aspect-ratio: auto;
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+    .card-body {
+      justify-content: center;
+      padding: 1.25rem 1.5rem;
+    }
+  }
+}
+
+// Personal page: air between list items
+.post article ul > li + li {
+  margin-top: 0.5em;
+}
+.cv-timeline li + li {
+  margin-top: 0 !important;
+}
+
+// navbar wordmark: regular weight
+.navbar-brand.title {
+  font-weight: 400 !important;
+}
+
+// CV page: modest download button under the intro
+.cv-download {
+  margin: 0 0 1.5rem;
+  a {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 6px;
+  }
+  a:hover {
+    background: var(--global-theme-color);
+    color: #fff !important;
+    text-decoration: none;
+  }
+}
+.pub .pub-press {
+  color: var(--global-text-color-light);
+}
+
+// wide project card: second paragraph in muted colour
+.projects .card .card-blurb {
+  color: var(--global-text-color-light);
+  margin-top: 0.25rem;
+}
+@media (min-width: 768px) {
+  .projects .card.card-wide figure {
+    flex-basis: 30%;
+  }
+}
+
+// autoplaying YouTube clip under a publication row
+.pub .pub-media iframe.pub-youtube {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  background: #111;
+}
+
+// thumbnail showing only the top part of its image (thumb_visible); zoom shows all of it
+.pub .pub-row .pub-thumb .pub-thumb-clip {
+  width: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    max-height: none;
+  }
 }
