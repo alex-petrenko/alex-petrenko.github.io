@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://alex-petrenko.github.io/sitemap.xml
