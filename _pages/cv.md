@@ -4,10 +4,11 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-description: Brief timeline of my education, work, and life.
 ---
 
 <p class="cv-download"><a href="/assets/cv.pdf" download="Aleksei_Petrenko_CV.pdf"><i class="fa-solid fa-file-pdf"></i> Download full CV (PDF)</a></p>
+
+<p class="post-description cv-intro">Brief timeline of my education, work, and life.</p>
 
 
 <ul class="cv-timeline">

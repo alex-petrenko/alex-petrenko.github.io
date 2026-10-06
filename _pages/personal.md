@@ -19,5 +19,6 @@ description: Since this is my personal webpage, here's some random information a
 - I listen to all kinds of music, but my all-time favorite is the Swedish band Opeth.
 
 <div class="proj-media">
-  <iframe title="YouTube video" src="https://www.youtube-nocookie.com/embed/NkYigkyJyEg" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  <iframe title="My best lap at the Spring Mountain racing school" src="https://www.youtube-nocookie.com/embed/NkYigkyJyEg" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </div>
+<p class="proj-caption">My best lap footage from the Spring Mountain racing school.</p>

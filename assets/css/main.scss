@@ -731,3 +731,17 @@ footer .footer-social {
     flex-direction: column;
   }
 }
+
+// small caption under a centred video/embed
+.post article p.proj-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin-top: -0.6rem;
+}
+
+// CV page: intro line sits under the download button
+.post article p.cv-intro {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
