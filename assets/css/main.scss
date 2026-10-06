@@ -403,43 +403,6 @@ html[data-theme="dark"] .pub .pub-tldr {
   margin-bottom: 0.5rem;
 }
 
-// ---------------------------------------------------------------- projects page cards
-.projects {
-  h2.category {
-    color: var(--global-text-color);
-    text-align: left;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-
-  .card {
-    height: 100%;
-
-    img,
-    .card-img-top {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      margin: 0;
-    }
-
-    .card-body {
-      text-align: left;
-      padding: 0.8rem 1rem 1rem;
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin: 0 0 0.35rem;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-    }
-  }
-}
-
 // ---------------------------------------------------------------- footer
 footer {
   font-size: 0.85rem;
@@ -643,12 +606,6 @@ footer .footer-social {
   }
 }
 
-// short card blurbs are not body prose: ragged right avoids stretched gaps in narrow cards
-.projects .card .card-text,
-.projects .card .card-title {
-  text-align: left !important;
-}
-
 // link row on its own line, never stretched by justification
 .pub .pub-links {
   text-align: left;
@@ -660,37 +617,6 @@ footer .footer-social {
 }
 .home-pubs .publications {
   margin-top: 1rem;
-}
-
-// project cards: GitHub icon pinned to the bottom of every card
-.projects .card .card-body {
-  display: flex;
-  flex-direction: column;
-}
-.projects .card .card-github {
-  margin-top: auto;
-  padding-top: 0.5rem;
-  font-size: 1.2rem;
-}
-// a lone project: horizontal card, image on the left
-@media (min-width: 768px) {
-  .projects .card.card-wide {
-    flex-direction: row;
-    figure {
-      flex: 0 0 36%;
-      margin: 0;
-    }
-    img,
-    .card-img-top {
-      height: 100%;
-      aspect-ratio: auto;
-      border-radius: 0.25rem 0 0 0.25rem;
-    }
-    .card-body {
-      justify-content: center;
-      padding: 1.25rem 1.5rem;
-    }
-  }
 }
 
 // Personal page: air between list items
@@ -727,17 +653,6 @@ footer .footer-social {
   color: var(--global-text-color-light);
 }
 
-// wide project card: second paragraph in muted colour
-.projects .card .card-blurb {
-  color: var(--global-text-color-light);
-  margin-top: 0.25rem;
-}
-@media (min-width: 768px) {
-  .projects .card.card-wide figure {
-    flex-basis: 30%;
-  }
-}
-
 // autoplaying YouTube clip under a publication row
 .pub .pub-media iframe.pub-youtube {
   display: block;
@@ -756,5 +671,63 @@ footer .footer-social {
   img {
     width: 100%;
     max-height: none;
+  }
+}
+
+// Other projects page: each project opens with a large title over a divider line
+.post article h2.proj {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 3.5rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  .proj-year {
+    font-weight: 400;
+    color: var(--global-text-color-light);
+    margin-left: 0.35rem;
+  }
+}
+.post article h2.proj:first-of-type {
+  margin-top: 1rem;
+}
+.post article p.proj-meta {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  text-align: left;
+  margin-bottom: 0.9rem;
+}
+// media at ~75% of the column, centred, like the publication GIFs
+.proj-media {
+  width: 75%;
+  margin: 1rem auto 1.2rem;
+  display: flex;
+  gap: 12px;
+  > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  iframe,
+  img {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  }
+  iframe {
+    aspect-ratio: 16 / 9;
+  }
+  &.pair iframe {
+    aspect-ratio: 1 / 1;
+  }
+  img {
+    height: auto;
+    cursor: zoom-in;
+  }
+}
+@media (max-width: 576px) {
+  .proj-media {
+    width: 100%;
+    flex-direction: column;
   }
 }

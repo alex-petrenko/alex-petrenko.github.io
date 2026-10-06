@@ -4,7 +4,7 @@ permalink: /opensource/
 title: Open source
 nav: true
 nav_order: 3
-description: Libraries and tools I wrote and maintain.
+description: Libraries and tools I built.
 ---
 
 <div class="os-stats">
@@ -19,7 +19,7 @@ description: Libraries and tools I wrote and maintain.
     <h3><a href="https://github.com/alex-petrenko/sample-factory">Sample Factory</a></h3>
     <span class="os-meta">★ 1K · 150 forks · 120K downloads · <a href="https://www.samplefactory.dev/">docs</a> · <a href="https://arxiv.org/abs/2006.11751">paper (ICML 2020)</a></span>
   </div>
-  <p>High-throughput asynchronous reinforcement learning framework. At the time of release, the fastest open-source PPO implementation: ~10x faster than traditional synchronous RL implementations, with SOTA results in challenging VizDoom and DMLab environments.</p>
+  <p>High-throughput asynchronous reinforcement learning framework. At the time of release, the fastest open-source PPO implementation: ~10x faster than traditional synchronous RL implementations, with SOTA results in challenging VizDoom and DMLab environments. Agents trained with Sample Factory:</p>
   <div class="os-gallery">
     <figure><img src="/assets/img/publication_preview/sf_battle.gif" alt="VizDoom battle" loading="lazy"><figcaption>VizDoom: battle</figcaption></figure>
     <figure><img src="/assets/img/publication_preview/sf_duel.gif" alt="VizDoom duel" loading="lazy"><figcaption>VizDoom: self-play duel</figcaption></figure>
@@ -66,7 +66,7 @@ description: Libraries and tools I wrote and maintain.
     <h3><a href="https://github.com/alex-petrenko/4dvideo">4DVideo</a></h3>
     <span class="os-meta">★ 43</span>
   </div>
-  <p>"4D video" grabber and player for Intel RealSense and Google Tango, with a fast real-time Delaunay triangulation (modified Guibas-Stolfi): 300fps on PC, 100fps on Android. More in <a href="/projects/8_4dvideo/">projects</a>.</p>
+  <p>"4D video" grabber and player for Intel RealSense and Google Tango, with a fast real-time Delaunay triangulation (modified Guibas-Stolfi): 300fps on PC, 100fps on Android. More in <a href="/projects/#volumetric-video">other projects</a>.</p>
   <div class="os-gallery single">
     <figure><img src="/assets/img/opensource/4dvideo_triangulation.gif" alt="Delaunay triangulation" loading="lazy" style="aspect-ratio: 1 / 1;"><figcaption>Delaunay triangulation</figcaption></figure>
   </div>

@@ -4,10 +4,22 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-description: Timeline of my education, research, and work.
+description: Brief timeline of my education, work, and life.
 ---
 
-<p class="cv-download"><a href="/assets/cv.pdf"><i class="fa-solid fa-file-pdf"></i> Download full CV (PDF)</a></p>
+<p class="cv-download"><a href="/assets/cv.pdf" download="Aleksei_Petrenko_CV.pdf"><i class="fa-solid fa-file-pdf"></i> Download full CV (PDF)</a></p>
+
+<script>
+  // Opening the CV tab starts the PDF download right away (the button above stays as a fallback).
+  window.addEventListener("load", () => {
+    const a = document.createElement("a");
+    a.href = "/assets/cv.pdf";
+    a.download = "Aleksei_Petrenko_CV.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+</script>
 
 <ul class="cv-timeline">
   <li><span class="yr">2026</span><span>My son <a href="/assets/leo.jpg">Leo</a> was born ❤️</span></li>
