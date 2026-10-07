@@ -766,3 +766,45 @@ footer .footer-social {
     margin: 0 auto 1.25rem !important;
   }
 }
+
+// Open source page: compact benchmark table (Faster-FIFO)
+.os-table-wrap {
+  overflow-x: auto;
+  margin: 0.4rem 0 0.2rem;
+}
+.os-table {
+  width: 100%;
+  font-size: 0.85rem;
+  border-collapse: collapse;
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    padding: 0 0 0.4rem;
+  }
+  th,
+  td {
+    padding: 0.3rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: center;
+    white-space: nowrap;
+  }
+  th:first-child,
+  td:first-child {
+    text-align: left;
+    white-space: normal;
+  }
+  thead th {
+    font-weight: 600;
+    border-bottom-width: 2px;
+  }
+  td:not(:first-child) {
+    font-variant-numeric: tabular-nums;
+  }
+}
+.os-table td .msgs {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+}

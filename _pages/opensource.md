@@ -51,6 +51,20 @@ description: Libraries and tools I built.
     <span class="os-meta">★ 200 · 1.3M downloads · <code>pip install faster-fifo</code></span>
   </div>
   <p>A faster alternative to Python's built-in <code>multiprocessing.Queue</code>.</p>
+  <div class="os-table-wrap">
+  <table class="os-table">
+    <caption>Performance comparison, faster-fifo vs <code>multiprocessing.Queue</code>: execution time in seconds, lower is better. Intel Core i9-7900X @ 3.30GHz, 10 cores, Ubuntu 18.04.</caption>
+    <thead><tr><th></th><th>multiprocessing.Queue</th><th>faster-fifo, get()</th><th>faster-fifo, get_many()</th></tr></thead>
+    <tbody>
+      <tr><td>1 producer, 1 consumer<span class="msgs">200K msgs per producer</span></td><td>2.54</td><td>0.86</td><td>0.92</td></tr>
+      <tr><td>1 producer, 10 consumers<span class="msgs">200K msgs per producer</span></td><td>4.00</td><td>1.39</td><td>1.36</td></tr>
+      <tr><td>10 producers, 1 consumer<span class="msgs">100K msgs per producer</span></td><td>13.19</td><td>6.74</td><td>0.94</td></tr>
+      <tr><td>3 producers, 20 consumers<span class="msgs">100K msgs per producer</span></td><td>9.30</td><td>2.22</td><td>2.17</td></tr>
+      <tr><td>20 producers, 3 consumers<span class="msgs">50K msgs per producer</span></td><td>18.62</td><td>7.41</td><td>0.64</td></tr>
+      <tr><td>20 producers, 20 consumers<span class="msgs">50K msgs per producer</span></td><td>36.51</td><td>1.32</td><td>3.79</td></tr>
+    </tbody>
+  </table>
+  </div>
 </div>
 
 <div class="os-project">
