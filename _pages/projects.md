@@ -51,8 +51,8 @@ Tensorflow implementation of the method
 by Pathak et al. for hard exploration tasks in 3D pixel-based environment.
 
 <div class="proj-media pair">
-  <video src="/assets/img/projects/doom_maze.mp4" aria-label="VizDoom maze" autoplay muted loop playsinline></video>
-  <video src="/assets/img/projects/doom_very_sparse.mp4" aria-label="VizDoom maze, very sparse reward" autoplay muted loop playsinline></video>
+  <video src="/assets/img/projects/doom_maze.mp4" aria-label="VizDoom maze" muted loop playsinline preload="metadata" data-autoplay></video>
+  <video src="/assets/img/projects/doom_very_sparse.mp4" aria-label="VizDoom maze, very sparse reward" muted loop playsinline preload="metadata" data-autoplay></video>
 </div>
 
 <h2 id="microtbs" class="proj">RL agents for a game "MicroTbs" <span class="proj-year">2017</span></h2>

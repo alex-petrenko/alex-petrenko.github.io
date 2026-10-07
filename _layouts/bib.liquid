@@ -69,7 +69,7 @@
       {%- assign ext = m | split: '.' | last | split: '?' | first | downcase -%}
       {%- if ext == 'mp4' or ext == 'webm' -%}
         {%- if entry.poster %}{% assign psrc = entry.poster | prepend: '/assets/img/publication_preview/' | relative_url %}{% endif -%}
-        <video src="{{ src }}"{% if entry.poster %} poster="{{ psrc }}" style="background-image: url('{{ psrc }}')"{% endif %} autoplay muted loop playsinline></video>
+        <video src="{{ src }}"{% if entry.poster %} poster="{{ psrc }}" style="background-image: url('{{ psrc }}')"{% endif %} muted loop playsinline preload="metadata" data-autoplay></video>
       {%- else -%}
         <img src="{{ src }}" alt="{{ entry.title | escape }}" loading="lazy" data-zoomable>
       {%- endif -%}

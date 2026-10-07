@@ -35,3 +35,21 @@
   </footer>
 {% endif %}
 
+{%- comment -%}
+  Self-hosted videos (data-autoplay) load only their header up front, start playing when they
+  come near the screen, and pause when scrolled away: fast first paint, no wasted mobile data.
+{%- endcomment -%}
+<script>
+  (() => {
+    const videos = document.querySelectorAll("video[data-autoplay]");
+    if (!("IntersectionObserver" in window)) {
+      videos.forEach((v) => v.play().catch(() => {}));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => (e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause())),
+      { rootMargin: "300px 0px" }
+    );
+    videos.forEach((v) => io.observe(v));
+  })();
+</script>
