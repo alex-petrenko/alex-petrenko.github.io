@@ -295,7 +295,9 @@ ol.bibliography {
     margin: 0;
   }
 
-  img {
+  img,
+  video {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -523,10 +525,13 @@ footer .container {
     flex-direction: column;
     .pub-thumb {
       max-width: 100%;
-      flex-basis: auto;
+      flex: none;
       width: 100%;
       height: auto;
-      max-height: 260px;
+      img,
+      video {
+        max-height: 240px;
+      }
     }
   }
 }
@@ -560,7 +565,7 @@ footer .container {
   width: 100%;
   height: auto;
 }
-.pub .pub-media video {
+.pub .pub-media video[poster] {
   aspect-ratio: 16 / 9;
   background-color: #111 !important;
   background-size: cover;
@@ -707,7 +712,8 @@ footer .footer-social {
     min-width: 0;
   }
   iframe,
-  img {
+  img,
+  video {
     display: block;
     width: 100%;
     border: 0;
@@ -744,4 +750,10 @@ footer .footer-social {
 .post article p.cv-intro {
   text-align: left;
   margin-bottom: 1.25rem;
+}
+
+// page intro line under the title is a caption, not body prose: never justified
+.post-header .post-description,
+.post article p.post-description {
+  text-align: left;
 }
