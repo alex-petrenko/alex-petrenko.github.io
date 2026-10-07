@@ -757,3 +757,12 @@ footer .footer-social {
 .post article p.post-description {
   text-align: left;
 }
+
+// Home photo on phones: smaller and centred above the bio instead of full width
+@media (max-width: 575.98px) {
+  .profile {
+    width: 55%;
+    float: none !important;
+    margin: 0 auto 1.25rem !important;
+  }
+}
