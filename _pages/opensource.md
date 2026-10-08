@@ -54,7 +54,7 @@ description: Libraries and tools I built.
   <div class="os-table-wrap">
   <table class="os-table">
     <caption>Performance comparison, faster-fifo vs <code>multiprocessing.Queue</code>: execution time in seconds, lower is better. Intel Core i9-7900X @ 3.30GHz, 10 cores, Ubuntu 18.04.</caption>
-    <thead><tr><th></th><th>multiprocessing.Queue</th><th>faster-fifo, get()</th><th>faster-fifo, get_many()</th></tr></thead>
+    <thead><tr><th></th><th>multiprocessing<wbr>.Queue</th><th>faster-fifo, get()</th><th>faster-fifo, get_many()</th></tr></thead>
     <tbody>
       <tr><td>1 producer, 1 consumer<span class="msgs">200K msgs per producer</span></td><td>2.54</td><td>0.86</td><td>0.92</td></tr>
       <tr><td>1 producer, 10 consumers<span class="msgs">200K msgs per producer</span></td><td>4.00</td><td>1.39</td><td>1.36</td></tr>

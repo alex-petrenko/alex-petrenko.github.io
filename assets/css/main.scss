@@ -826,3 +826,31 @@ footer .footer-social {
 .navbar-nav .nav-link {
   font-size: 0.93rem;
 }
+// benchmark table on phones: fit the screen instead of squeezing the label column
+@media (max-width: 575.98px) {
+  .os-table {
+    font-size: 0.72rem;
+    th,
+    td {
+      padding: 0.3rem 0.2rem;
+    }
+    thead th {
+      white-space: normal;
+      vertical-align: bottom;
+    }
+    td:first-child {
+      min-width: 7.5rem;
+      hyphens: none;
+      -webkit-hyphens: none;
+    }
+    caption {
+      font-size: 0.78rem;
+    }
+  }
+}
+
+// code is never hyphenated
+code {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
