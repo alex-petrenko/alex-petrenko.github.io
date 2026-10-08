@@ -808,3 +808,21 @@ footer .footer-social {
   font-size: 0.75rem;
   color: var(--global-text-color-light);
 }
+
+// Phones: justified text in a narrow column needs word breaks, otherwise it opens huge gaps.
+// Desktop keeps the no-hyphenation rule above.
+@media (max-width: 575.98px) {
+  article p,
+  article li,
+  .post p,
+  .pub .pub-text,
+  .pub .pub-tldr {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
+
+// navbar items a little smaller than body text
+.navbar-nav .nav-link {
+  font-size: 0.93rem;
+}
